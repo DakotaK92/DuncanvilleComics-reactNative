@@ -1,0 +1,59 @@
+import { Feather } from '@expo/vector-icons';
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { Tabs } from 'expo-router';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+
+const TabsLayout = () => {
+    const insets = useSafeAreaInsets();
+
+    return (
+        <Tabs
+            screenOptions={{
+                headerShown: false,
+                tabBarActiveTintColor: "#0000ff",
+                tabBarInactiveTintColor: "#808080",
+                tabBarStyle: {
+                    backgroundColor: "#f8f8f8",
+                    borderTopWidth: 1,
+                    borderTopColor: "#e5e5e5",
+                    height: 50 + insets.bottom,
+                    paddingTop: 5,
+                },
+            }}
+        >
+            <Tabs.Screen
+                name="index"
+                options={{
+                    title: "",
+                    tabBarIcon: ({ color, size}) => <Feather name="home" size={size} color={color} />
+                }}
+            />
+            <Tabs.Screen
+                name="rewards"
+                options={{
+                    title: "",
+                    tabBarIcon: ({ color, size}) => <FontAwesome5 name="award" size={size} color={color} />
+                }}
+            />
+            <Tabs.Screen
+                name="trophies"
+                options={{
+                    title: "",
+                    tabBarIcon: ({ color, size}) => <Ionicons name="trophy-outline" size={size} color={color} />
+                }}
+            />
+            <Tabs.Screen
+                name="cart"
+                options={{
+                    title: "",
+                    tabBarIcon: ({ color, size}) => <FontAwesome6 name="cart-shopping" size={size} color={color} />
+                }}
+            />
+        </Tabs>
+    )
+}
+
+export default TabsLayout
