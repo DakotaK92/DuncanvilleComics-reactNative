@@ -1,6 +1,6 @@
-import { Feather } from '@expo/vector-icons';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { Tabs } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -13,7 +13,7 @@ const TabsLayout = () => {
         <Tabs
             screenOptions={{
                 headerShown: false,
-                tabBarActiveTintColor: "#0000ff",
+                tabBarActiveTintColor: "red",
                 tabBarInactiveTintColor: "#808080",
                 tabBarStyle: {
                     backgroundColor: "#f8f8f8",
@@ -28,7 +28,7 @@ const TabsLayout = () => {
                 name="index"
                 options={{
                     title: "",
-                    tabBarIcon: ({ color, size}) => <Feather name="home" size={size} color={color} />
+                    tabBarIcon: ({ color, size}) => <FontAwesome name="home" size={size} color={color} />
                 }}
             />
             <Tabs.Screen
@@ -42,7 +42,7 @@ const TabsLayout = () => {
                 name="trophies"
                 options={{
                     title: "",
-                    tabBarIcon: ({ color, size}) => <Ionicons name="trophy-outline" size={size} color={color} />
+                    tabBarIcon: ({ color, size}) => <Ionicons name="trophy-sharp" size={size} color={color} />
                 }}
             />
             <Tabs.Screen
