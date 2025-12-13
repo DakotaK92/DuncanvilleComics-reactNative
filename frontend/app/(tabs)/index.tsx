@@ -44,19 +44,20 @@ export default function Index() {
             data={messages}
             keyExtractor={(item) => item.id.toString()}
             className="m-6"
+            showsVerticalScrollIndicator={false}
             renderItem={({ item }: { item: MessageType }) => (
               <ImageBackground
                 source={item.backgroundImage}
                 className="mb-4 rounded-lg overflow-hidden"
                 resizeMode="cover"
               >
-                <View className="bg-opacity-60 p-4 flex-row items-center">
+                <View className=" p-4 flex-column items-center">
                   <View className="flex-1">
-                    <Text className="text-white font-gothamMedium text-lg">
-                      {item.title}
-                    </Text>
                     <Text className="text-white font-gothamMedium text-sm">
                       {item.date}
+                    </Text>
+                    <Text className="text-white font-gothamMedium text-lg">
+                      {item.title}
                     </Text>
                     <Text className="text-white font-gothamMedium text-sm">
                       {item.shipping}
